@@ -15,6 +15,7 @@ class TabBarController: UITabBarController {
         //self.tabBar.tintColor = UIColor.mainblue
         setTabBar()
         // Do any additional setup after loading the view.
+        self.delegate = self
     }
     
     
@@ -63,15 +64,22 @@ class TabBarController: UITabBarController {
         fourthTab.tabBarItem.image = UIImage(named: "iconMy")
         fourthTab.tabBarItem.selectedImage = UIImage(named: "iconMy")?.withRenderingMode(.alwaysTemplate)
         // Shopping Basket Tab
-        let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBasketExample", bundle: nil)
-        guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketExVC")
-            as? ShoppingBasketExVC  else {
+//        let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBasketExample", bundle: nil)
+//        guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketExVC")
+//            as? ShoppingBasketExVC  else {
+//            return
+//        }
+        let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBaseketJH", bundle: nil)
+        guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketjhVC")
+            as? UIViewController  else {
             return
         }
         
         fifthTab.tabBarItem.title = ""
         fifthTab.tabBarItem.image = UIImage(named: "iconCart")
         fifthTab.tabBarItem.selectedImage = UIImage(named: "iconCart")?.withRenderingMode(.alwaysTemplate)
+        
+        
         // Create an Array of Tables with Tabs as Elements.
         let tabs =  [firstTab, secondTab, thirdTab, fourthTab, fifthTab]
         
@@ -90,4 +98,18 @@ class TabBarController: UITabBarController {
     }
     */
 
+}
+
+extension TabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if (tabBarController.selectedIndex == 4) {
+            let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBaseketJH", bundle: nil)
+            guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketjhVC")
+                as? UIViewController  else {
+                return
+            }
+            
+            self.navigationController?.pushViewController(fifthTab, animated: true)
+        }
+    }
 }

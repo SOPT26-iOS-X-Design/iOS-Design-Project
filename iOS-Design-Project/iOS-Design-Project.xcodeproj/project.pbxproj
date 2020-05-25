@@ -26,6 +26,7 @@
 		7F79F75E247A5B7600B9FC56 /* ShoppingBasketExVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F75D247A5B7600B9FC56 /* ShoppingBasketExVC.swift */; };
 		7F79F760247A620000B9FC56 /* MainTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F79F75F247A620000B9FC56 /* MainTab.storyboard */; };
 		7F79F762247A652B00B9FC56 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F761247A652B00B9FC56 /* UIColor+Additions.swift */; };
+		7F79F764247BB87300B9FC56 /* ShoppingBaseketJH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F79F763247BB87300B9FC56 /* ShoppingBaseketJH.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		7F79F75D247A5B7600B9FC56 /* ShoppingBasketExVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBasketExVC.swift; sourceTree = "<group>"; };
 		7F79F75F247A620000B9FC56 /* MainTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTab.storyboard; sourceTree = "<group>"; };
 		7F79F761247A652B00B9FC56 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		7F79F763247BB87300B9FC56 /* ShoppingBaseketJH.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShoppingBaseketJH.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				7F79F74F247A5A3400B9FC56 /* PersonalInfo.storyboard */,
 				7F79F751247A5AA200B9FC56 /* HomeExample.storyboard */,
 				7F79F753247A5AE800B9FC56 /* ShoppingBasketExample.storyboard */,
+				7F79F763247BB87300B9FC56 /* ShoppingBaseketJH.storyboard */,
 				7F79F75F247A620000B9FC56 /* MainTab.storyboard */,
 			);
 			path = Storyboards;
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F79F764247BB87300B9FC56 /* ShoppingBaseketJH.storyboard in Resources */,
 				7F79F74C247A5A1A00B9FC56 /* Category.storyboard in Resources */,
 				7F79F73A247A53FC00B9FC56 /* LaunchScreen.storyboard in Resources */,
 				7F79F754247A5AE800B9FC56 /* ShoppingBasketExample.storyboard in Resources */,
