@@ -18,10 +18,10 @@ open class FSPagerViewCell: UICollectionViewCell {
         }
         let view = UIView(frame: .zero)
         view.isUserInteractionEnabled = false
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.white
         
         let textLabel = UILabel(frame: .zero)
-        textLabel.textColor = .white
+        textLabel.textColor = .black
         textLabel.font = UIFont.preferredFont(forTextStyle: .body)
         self.contentView.addSubview(view)
         view.addSubview(textLabel)
@@ -48,7 +48,7 @@ open class FSPagerViewCell: UICollectionViewCell {
     fileprivate weak var _imageView: UIImageView?
     
     fileprivate let kvoContext = UnsafeMutableRawPointer(bitPattern: 0)
-    fileprivate let selectionColor = UIColor(white: 0.2, alpha: 0.2)
+    fileprivate let selectionColor = UIColor(white: 1, alpha: 0)
     
     fileprivate weak var _selectedForegroundView: UIView?
     fileprivate var selectedForegroundView: UIView? {
@@ -99,11 +99,11 @@ open class FSPagerViewCell: UICollectionViewCell {
     }
     
     fileprivate func commonInit() {
-        self.contentView.backgroundColor = UIColor.clear
-        self.backgroundColor = UIColor.clear
-        self.contentView.layer.shadowColor = UIColor.black.cgColor
+        self.contentView.backgroundColor = UIColor.white
+        self.backgroundColor = UIColor.white
+        self.contentView.layer.shadowColor = UIColor.white.cgColor
         self.contentView.layer.shadowRadius = 5
-        self.contentView.layer.shadowOpacity = 0.75
+        self.contentView.layer.shadowOpacity = 0.0
         self.contentView.layer.shadowOffset = .zero
     }
     

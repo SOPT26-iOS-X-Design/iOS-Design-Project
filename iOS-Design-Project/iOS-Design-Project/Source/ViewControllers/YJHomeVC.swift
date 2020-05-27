@@ -9,18 +9,70 @@
 import UIKit
 import FSPagerView
 
-class YJHomeVC: UIViewController {
-
+class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
+    
+    let username = "곽민주"
+    let imageNames = ["ad1","ad1","ad1","ad1","ad1","ad1"]
+    let product = ["고구마","마스크","선풍기","운동화","건조기","고등어","마스크","카메라","면도기","닌텐도"]
+    var numberOfItems = 6
+    var numberOfnumbers = 10
+    
+    @IBOutlet var user: UILabel!
     @IBOutlet var HomeSearchBar: UISearchBar!
+    @IBOutlet var pagerView: FSPagerView!{
+        didSet {
+            self.pagerView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell")
+        }
+    }
+    @IBOutlet var pageControl: FSPageControl!{
+        didSet {
+            self.pageControl.numberOfPages = self.imageNames.count
+            self.pageControl.contentHorizontalAlignment = .center
+            self.pageControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        }
+    }
+    @IBOutlet var numView: FSPagerView!{
+        didSet {
+            self.numView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell2")
+        }
+    }
+    @IBOutlet var productView: FSPagerView!{
+        didSet {
+            self.productView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell3")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        user.text = username + "님의 추천상품"
         
         setNavi()
+        setPager()
         setSearchbar()
         // Do any additional setup after loading the view.
     }
     
+    //홈 배너의 페이지 뷰 설정
+    private func setPager(){
+        //넘겨지는 페이지 아이콘 이미지 설정
+        self.pageControl.setImage(UIImage(named: "stateCircle5"), for: .normal)
+        self.pageControl.setImage(UIImage(named: "stateCircle6"), for: .selected)
+        //페이지 무한대로 넘어감 (마지막 페이지 -> 첫번째 페이지)
+        self.pagerView.isInfinite = true
+
+        
+        //*******
+        self.numView.isInfinite = true
+        self.numView.scrollDirection = .vertical
+        self.numView.automaticSlidingInterval = 3.0
+        
+        self.productView.isInfinite = true
+        self.productView.scrollDirection = .vertical
+        self.productView.automaticSlidingInterval = 3.0
+        
+    }
+    
+    //navigation bar 설정
     private func setNavi(){
         //navigation bar title에 logo 이미지 넣기
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 109, height: 28))
@@ -52,14 +104,65 @@ class YJHomeVC: UIViewController {
         HomeSearchBar.setImage(UIImage(named: "iconTopSearch"), for: .search, state: .normal)
 
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //배너 광고사진 개수
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
+        if pagerView == self.pagerView{
+            return numberOfItems
+        }
+        else{
+            return numberOfnumbers
+        }
     }
-    */
+    
+    //배너 광고사진 뷰
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        if pagerView == self.pagerView{
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell", at: index)
+            cell.imageView?.image = UIImage(named: self.imageNames[index])
+            cell.imageView?.contentMode = .scaleAspectFill
+            cell.imageView?.clipsToBounds = true
+            return cell
+        }
+        else if pagerView == self.numView{
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell2", at: index)
+            cell.textLabel?.superview?.backgroundColor = .white
+            cell.textLabel?.text = String(index+1)
+            cell.textLabel?.backgroundColor = .white
+            if index < 3{
+                cell.textLabel?.textColor = UIColor.mainblue
+                cell.textLabel?.font = UIFont.init(name: "AppleSDGothicNeo-bold", size: 13)
+            }
+            else{
+                cell.textLabel?.textColor = UIColor.darkGray
+                cell.textLabel?.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 13)
+            }
+            return cell
+        }
+        else{
+            let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell3", at: index)
+            cell.textLabel?.superview?.backgroundColor = .white
+            cell.textLabel?.text = self.product[index]
+            cell.textLabel?.backgroundColor = .white
+            cell.textLabel?.textColor = UIColor.darkGray
+            cell.textLabel?.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 13)
+            return cell
+        }
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        pagerView.deselectItem(at: index, animated: true)
+        pagerView.scrollToItem(at: index, animated: true)
+    }
+
+    //페이지 컨트롤러
+    func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
+        self.pageControl.currentPage = targetIndex
+    }
+    
+    func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
+        self.pageControl.currentPage = pagerView.currentIndex
+    }
+    
 
 }

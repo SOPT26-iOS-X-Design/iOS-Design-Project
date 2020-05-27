@@ -555,7 +555,7 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
         
         // Content View
         let contentView = UIView(frame:CGRect.zero)
-        contentView.backgroundColor = UIColor.clear
+        contentView.backgroundColor = UIColor.white
         self.addSubview(contentView)
         self.contentView = contentView
         
