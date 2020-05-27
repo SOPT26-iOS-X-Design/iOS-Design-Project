@@ -2,18 +2,18 @@
   "images" : [
     {
       "scale" : "1x",
-      "filename" : "buttonRoketoversea.png",
+      "filename" : "ad2.png",
       "idiom" : "universal"
     },
     {
+      "filename" : "ad2@2x.png",
       "scale" : "2x",
-      "filename" : "buttonRoketoversea@2x.png",
       "idiom" : "universal"
     },
     {
-      "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "buttonRoketoversea@3x.png"
+      "filename" : "ad2@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {

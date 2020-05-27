@@ -1,18 +1,18 @@
 {
   "images" : [
     {
+      "filename" : "img6066.png",
       "idiom" : "universal",
-      "filename" : "buttonRoketdelivery.png",
       "scale" : "1x"
     },
     {
-      "filename" : "buttonRoketdelivery@2x.png",
-      "scale" : "2x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "img6066@2x.png",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "buttonRoketdelivery@3x.png",
+      "filename" : "img6066@3x.png",
       "scale" : "3x"
     }
   ],

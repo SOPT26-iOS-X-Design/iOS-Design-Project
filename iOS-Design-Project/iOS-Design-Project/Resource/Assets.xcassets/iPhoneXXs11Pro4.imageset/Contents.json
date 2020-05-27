@@ -1,19 +1,19 @@
 {
   "images" : [
     {
+      "filename" : "iPhoneXXs11Pro4.png",
       "scale" : "1x",
-      "filename" : "buttonRoketoversea.png",
       "idiom" : "universal"
     },
     {
+      "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "buttonRoketoversea@2x.png",
-      "idiom" : "universal"
+      "filename" : "iPhoneXXs11Pro4@2x.png"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "buttonRoketoversea@3x.png"
+      "filename" : "iPhoneXXs11Pro4@3x.png"
     }
   ],
   "info" : {
