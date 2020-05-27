@@ -32,7 +32,6 @@ class BannerView: UIView , UIScrollViewDelegate{
         setUpUI()
         self.insertSubview(pageControl, at: 0)
         self.bringSubviewToFront(pageControl)
-        print(self.subviews)
     }
 
     
@@ -70,7 +69,6 @@ class BannerView: UIView , UIScrollViewDelegate{
         view.translatesAutoresizingMaskIntoConstraints = true
         scrollView.addSubview(view)
         view.frame = CGRect(x: CGFloat(index)*scrollView.frame.size.width, y: 0, width: scrollView.frame.size.width, height: scrollView.frame.size.height)
-        print(view.frame)
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentPage:Int = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -83,8 +81,7 @@ class BannerView: UIView , UIScrollViewDelegate{
         self.bringSubviewToFront(pageControl)
         self.bringSubviewToFront(pageControl)
         pageControl.currentPage = currentPage-1
-        print(pageControl.currentPage)
-    }
+   }
     
     private func setUpUI() {
         scrollView.frame = CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height)
@@ -94,6 +91,9 @@ class BannerView: UIView , UIScrollViewDelegate{
         
         scrollView.showsHorizontalScrollIndicator = false
         setupPageControl()
+        print("스크롤뷰")
+        print(scrollView.frame)
+
     }
     private func setupPageControl() {
 

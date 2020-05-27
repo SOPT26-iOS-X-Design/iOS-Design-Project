@@ -14,10 +14,12 @@ class HomeExVC: UIViewController {
     private var bannerView:BannerView!
     private func setUpUI() {
         //self.view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
-        bannerView = BannerView(frame: CGRect(x: 0, y: 0, width: self.Banner.frame.size.width, height: self.Banner.frame.size.height))
+
+        bannerView = BannerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width*(197.0/375.0)))
         self.Banner.addSubview(bannerView)
-       
+        print(bannerView.frame)
         bannerView.backgroundColor = UIColor.green
+        Banner.frame = bannerView.frame
     }
     private func setUpBannerView(item:Int) {
       
@@ -32,7 +34,7 @@ class HomeExVC: UIViewController {
             itemImageView.translatesAutoresizingMaskIntoConstraints = false
             itemImageView.image = UIImage(named: urls[index])
             itemImageView.clipsToBounds = true
-            itemImageView.contentMode = UIView.ContentMode.scaleAspectFit
+            itemImageView.contentMode = UIView.ContentMode.scaleToFill
             itemImageView.isUserInteractionEnabled=true
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(buttonTapped(tapGestureRecognizer:)))
             itemImageView.addGestureRecognizer(tapGestureRecognizer)
@@ -43,6 +45,15 @@ class HomeExVC: UIViewController {
             print("터치")
         }
     }
+    ///로켓시리즈
+    @IBAction func roketDiliveryButton(_ sender: Any) {
+        
+    }
+    @IBAction func roketFreshButton(_ sender: Any) {
+    }
+    @IBAction func roketOverseaButton(_ sender: Any) {
+    }
+    
     
     ///카테고리 베너
     
@@ -56,20 +67,18 @@ class HomeExVC: UIViewController {
 
     
     private func setCategoryInformation(){
-        first_page_categoryImageInformation=["iconBeauty","iconBook","iconCook","iconDigital","iconFashion","iconHealth","iconOffice","iconSport","iconSupply","iconTicket","iconBeauty","iconBook","iconCook","iconDigital","iconFashion"]
+        first_page_categoryImageInformation=["iconBeauty","iconBook","iconCook","iconDigital","iconFashion","iconHealth","iconOffice","iconSport","iconSupply","iconTicket","iconBook","","iconCook","","iconDigital","","iconFashion","","iconBeauty",""]
         second_page_categoryImageInformation = []
         self.CategoryCollectionView.delegate = self
         self.CategoryCollectionView.dataSource = self
+        self.CategoryCollectionView.showsHorizontalScrollIndicator = false
+        self.Category.layer.shadowColor = UIColor.black.cgColor
     }
+/// 인기검색어
     
-   /* private func setScrollInformation(){
-        let secondCollectionView = UIView(frame: .zero)
-        secondCollectionView.frame = CGRect(x: self.CategoryScroll.frame.size.width, y: 0, width: self.CategoryScroll.frame.size.width, height: self.CategoryScroll.frame.size.height)
-        self.CategoryScroll.addSubview(secondCollectionView)
-        self.CategoryScroll.delegate = self
-        setCategoryInformation()
-    }
-    */
+    @IBOutlet weak var SearchRanking: UIView!
+    
+    @IBOutlet weak var SearchRankingViewHeight: NSLayoutConstraint!
     
     
     
@@ -78,7 +87,8 @@ class HomeExVC: UIViewController {
     private var productInformation:[Product] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(self.view.frame)
+        print(self.Banner.frame)
         setUpUI()
         setUpBannerView(item: 6)
         setCategoryInformation()
@@ -125,18 +135,28 @@ extension HomeExVC:UITableViewDelegate{
 }
 extension HomeExVC:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return first_page_categoryImageInformation.count
+    }
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        print(targetContentOffset.pointee.x)
+        let page = Int(targetContentOffset.pointee.x / 300)
+        print(page)
+
+        self.CategoryPageControl.currentPage = page
     }
 }
+
 extension HomeExVC:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
         cell.categoryImageView.image = UIImage(named: first_page_categoryImageInformation[indexPath.row])
-        
+
+        print(cell.frame)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        print(indexPath)
     }
 }
 extension HomeExVC: UICollectionViewDelegateFlowLayout {
@@ -145,12 +165,13 @@ extension HomeExVC: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (view.frame.width) / 6
-        return CGSize(width: width, height: width)
+        let width = floor(self.view.frame.width / 5)-10
+        let height = width
+        return CGSize(width: width, height:height)
     }
 }
 /*extension HomeExVC:UIScrollViewDelegate{
