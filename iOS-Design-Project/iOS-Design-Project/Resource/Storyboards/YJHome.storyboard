@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="rrg-mZ-UhW">
+            <objects>
+                <viewController storyboardIdentifier="YJHomeVC" id="Nqd-Hf-Q9u" customClass="YJHomeVC" customModule="iOS_Design_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xWc-as-Zem">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="검색어를 입력하세요." translatesAutoresizingMaskIntoConstraints="NO" id="1bt-rM-biT">
+                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.96470588235294119" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1bt-rM-biT" firstAttribute="top" secondItem="iBr-xV-EHO" secondAttribute="top" id="56f-vh-gp5"/>
+                            <constraint firstItem="iBr-xV-EHO" firstAttribute="trailing" secondItem="1bt-rM-biT" secondAttribute="trailing" id="5LG-UN-Rup"/>
+                            <constraint firstItem="1bt-rM-biT" firstAttribute="leading" secondItem="iBr-xV-EHO" secondAttribute="leading" id="yb8-Ex-hY9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iBr-xV-EHO"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="p1H-KK-BRV">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="iconAlarm" id="s2L-OK-khI">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="HomeSearchBar" destination="1bt-rM-biT" id="Gqo-7m-XXX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCY-sZ-Mdb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1216" y="59"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Edt-L7-crP">
+            <objects>
+                <navigationController storyboardIdentifier="YJHomeNavi" automaticallyAdjustsScrollViewInsets="NO" id="PFq-9l-O2d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3fW-96-omI">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nqd-Hf-Q9u" kind="relationship" relationship="rootViewController" id="5oV-XE-2gC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BBG-Lx-vkh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320.28985507246381" y="58.928571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconAlarm" width="22" height="22"/>
+    </resources>
+</document>
