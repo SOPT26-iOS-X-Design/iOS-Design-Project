@@ -9,14 +9,33 @@
 import UIKit
 import FSPagerView
 
-class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
+class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    
+    @IBOutlet var collection: UICollectionView!
+    private var products: [ProductInfo] = []
     let username = "곽민주"
     let imageNames = ["ad1","ad1","ad1","ad1","ad1","ad1"]
     let product = ["고구마","마스크","선풍기","운동화","건조기","고등어","마스크","카메라","면도기","닌텐도"]
+    let cateimgs = ["iconFashion","iconBeauty","iconSport","iconCook","iconBook","iconTicket","iconOffice","iconSupply","iconHealth","iconDigital"]
     var numberOfItems = 6
     var numberOfnumbers = 10
+    var index = 0
     
+    @IBOutlet var cateUIView: UIView!
+    @IBOutlet var cateView: FSPagerView!{
+        didSet{
+            self.cateView.register(FSPagerViewCell.self, forCellWithReuseIdentifier: "cell4")
+        }
+    }
+    @IBOutlet var catePageControl: FSPageControl!{
+        didSet {
+            self.catePageControl.numberOfPages = 2
+            self.catePageControl.contentHorizontalAlignment = .center
+            self.catePageControl.contentInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        }
+    }
+    @IBOutlet var cate1: [UIButton]!
     @IBOutlet var user: UILabel!
     @IBOutlet var HomeSearchBar: UISearchBar!
     @IBOutlet var pagerView: FSPagerView!{
@@ -46,21 +65,25 @@ class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
         super.viewDidLoad()
         user.text = username + "님의 추천상품"
         
+        //넘겨지는 페이지 아이콘 이미지 설정
+        self.pageControl.setImage(UIImage(named: "stateCircle5"), for: .normal)
+        self.pageControl.setImage(UIImage(named: "stateCircle6"), for: .selected)
+        
+        self.catePageControl.setImage(UIImage(named: "secondstateCircle"), for: .normal)
+        self.catePageControl.setImage(UIImage(named: "secondstateBar"), for: .selected)
+        
         setNavi()
         setPager()
         setSearchbar()
+        setproductinfo()
         // Do any additional setup after loading the view.
     }
     
     //홈 배너의 페이지 뷰 설정
     private func setPager(){
-        //넘겨지는 페이지 아이콘 이미지 설정
-        self.pageControl.setImage(UIImage(named: "stateCircle5"), for: .normal)
-        self.pageControl.setImage(UIImage(named: "stateCircle6"), for: .selected)
         //페이지 무한대로 넘어감 (마지막 페이지 -> 첫번째 페이지)
         self.pagerView.isInfinite = true
 
-        
         //*******
         self.numView.isInfinite = true
         self.numView.scrollDirection = .vertical
@@ -104,12 +127,16 @@ class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
         HomeSearchBar.setImage(UIImage(named: "iconTopSearch"), for: .search, state: .normal)
 
     }
+
     
     //배너 광고사진 개수
     func numberOfItems(in pagerView: FSPagerView) -> Int {
         if pagerView == self.pagerView{
             return numberOfItems
         }
+        else if pagerView == self.cateView{
+            return 2
+       }
         else{
             return numberOfnumbers
         }
@@ -139,6 +166,18 @@ class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
             }
             return cell
         }
+        else if pagerView == self.cateView{
+             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell4", at: index)
+            self.index = 0
+            for img in cateimgs {
+                cate1[self.index].setImage(UIImage(named: img), for: .normal
+                )
+                cate1[self.index].tintColor = UIColor.darkGray
+                self.index += 1
+            }
+            cell.addSubview(cateUIView)
+            return cell
+        }
         else{
             let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "cell3", at: index)
             cell.textLabel?.superview?.backgroundColor = .white
@@ -148,21 +187,52 @@ class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate {
             cell.textLabel?.font = UIFont.init(name: "AppleSDGothicNeo-Regular", size: 13)
             return cell
         }
+        
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         pagerView.deselectItem(at: index, animated: true)
         pagerView.scrollToItem(at: index, animated: true)
     }
-
-    //페이지 컨트롤러
+       
     func pagerViewWillEndDragging(_ pagerView: FSPagerView, targetIndex: Int) {
-        self.pageControl.currentPage = targetIndex
+        if pagerView == self.pagerView{
+            self.pageControl.currentPage = targetIndex
+        }
+        else if pagerView == self.cateView{
+            self.catePageControl.currentPage = targetIndex
+        }
     }
-    
+       
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
-        self.pageControl.currentPage = pagerView.currentIndex
+        if pagerView == self.pagerView{
+            self.pageControl.currentPage = pagerView.currentIndex
+        }
+        else if pagerView == self.cateView{
+            self.catePageControl.currentPage = cateView.currentIndex
+        }
     }
     
-
+    private func setproductinfo(){
+        let product1 = ProductInfo(mainimg: "img1", name: "[보랄] 더셰프 인덕션", price: "51,900원", subinfo: [true,true,true])
+        let product2 = ProductInfo(mainimg: "img2", name: "고구마는 원래 노랗다", price: "21,900원", subinfo: [false,true,true])
+        let product3 = ProductInfo(mainimg: "img3", name: "[해찬들] 국산 고추장", price: "31,900원", subinfo: [true,false,true])
+        let product4 = ProductInfo(mainimg: "img4", name: "면도기", price: "71,900원", subinfo: [true,false,false])
+        
+        products = [product1,product2,product3,product4]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return products.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let productcell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell
+        
+        productcell?.setProductInformation(Button_img: products[indexPath.row].mainimg, name: products[indexPath.row].name, price: products[indexPath.row].price, subinfo: products[indexPath.row].getImageName())
+        
+        return productcell!
+    }
+    
 }
+
+
