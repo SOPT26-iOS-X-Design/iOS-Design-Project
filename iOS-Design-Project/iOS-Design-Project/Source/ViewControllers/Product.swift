@@ -9,12 +9,16 @@
 import Foundation
 
 struct Product {
-    var ProductCategory: ProductView
-
-    init(product: ProductView){
-        self.ProductCategory = product
+    var ProductImageName: String
+    var ProductName:String
+    var ProductPrice:String
+    init (imagname:String, name:String,price:String){
+        self.ProductImageName = imagname
+        self.ProductName = name
+        self.ProductPrice = price
     }
 }
+/*
 enum ProductView {
     case recommend
     case roketFresh
@@ -27,3 +31,4 @@ enum ProductView {
         }
     }
 }
+*/
