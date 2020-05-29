@@ -12,7 +12,7 @@
         <!--HomeSHVC-->
         <scene sceneID="NBL-cf-fUf">
             <objects>
-                <viewController id="R1z-RR-ajT" customClass="HomeSHVC" customModule="iOS_Design_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeSHVC" id="R1z-RR-ajT" customClass="HomeSHVC" customModule="iOS_Design_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nnZ-1O-GXd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
