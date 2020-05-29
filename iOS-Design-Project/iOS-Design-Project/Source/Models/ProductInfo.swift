@@ -24,6 +24,7 @@ struct ProductInfo {
         self.subinfo = subinfo
     }
     
+    //로켓와우[0],로켓프레쉬[1],로켓배송[2]의 T/F값에 따라 뷰에 띄울 이미지 추가
     mutating func getImageName() -> [String] {
         if subinfo[0] == true{
             self.subinfo_img.append("badgeRoketwow")
