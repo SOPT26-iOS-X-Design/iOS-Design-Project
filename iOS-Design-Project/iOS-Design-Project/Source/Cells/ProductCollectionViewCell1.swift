@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCollectionViewCell: UICollectionViewCell {
+class ProductCollectionViewCell1: UICollectionViewCell {
  
     @IBOutlet var proimg_but: UIButton!
     @IBOutlet var pro_name: UILabel!

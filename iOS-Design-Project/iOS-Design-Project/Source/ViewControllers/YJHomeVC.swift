@@ -263,7 +263,7 @@ class YJHomeVC: UIViewController,FSPagerViewDataSource,FSPagerViewDelegate,UICol
     //collectionView 셀 내용
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.collection { //맞춤상품
-            let productcell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell
+            let productcell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell1", for: indexPath) as? ProductCollectionViewCell1
             productcell?.setProductInformation(Button_img: products[indexPath.row].mainimg, name: products[indexPath.row].name, price: products[indexPath.row].price, subinfo: products[indexPath.row].getImageName())
             
             return productcell!
