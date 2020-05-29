@@ -13,7 +13,7 @@ enum ProductCategory {
 }
 
 
-struct Product {
+struct ProductJH {
     var category: ProductCategory
     var name: String
     var imgStr: String

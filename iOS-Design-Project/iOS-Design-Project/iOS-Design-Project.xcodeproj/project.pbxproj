@@ -46,7 +46,7 @@
 		7F79F773247E6E4600B9FC56 /* NormalPurchaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F772247E6E4600B9FC56 /* NormalPurchaseCell.swift */; };
 		7F79F775247E6E9500B9FC56 /* RegularDeliveryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F774247E6E9500B9FC56 /* RegularDeliveryCell.swift */; };
 		7F79F777247F7A8F00B9FC56 /* ProductInShoppingBasketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F776247F7A8F00B9FC56 /* ProductInShoppingBasketCell.swift */; };
-		7F79F779247F7DB200B9FC56 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F778247F7DB200B9FC56 /* Product.swift */; };
+		7F79F779247F7DB200B9FC56 /* ProductJH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F778247F7DB200B9FC56 /* ProductJH.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,7 +91,7 @@
 		7F79F772247E6E4600B9FC56 /* NormalPurchaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalPurchaseCell.swift; sourceTree = "<group>"; };
 		7F79F774247E6E9500B9FC56 /* RegularDeliveryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularDeliveryCell.swift; sourceTree = "<group>"; };
 		7F79F776247F7A8F00B9FC56 /* ProductInShoppingBasketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInShoppingBasketCell.swift; sourceTree = "<group>"; };
-		7F79F778247F7DB200B9FC56 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7F79F778247F7DB200B9FC56 /* ProductJH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductJH.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,7 +169,7 @@
 		7F79F743247A541600B9FC56 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F79F778247F7DB200B9FC56 /* Product.swift */,
+				7F79F778247F7DB200B9FC56 /* ProductJH.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,7 +326,7 @@
 				010A5CB024801EA50081CD0B /* PopularSH.swift in Sources */,
 				7F79F777247F7A8F00B9FC56 /* ProductInShoppingBasketCell.swift in Sources */,
 				7F79F75E247A5B7600B9FC56 /* ShoppingBasketExVC.swift in Sources */,
-				7F79F779247F7DB200B9FC56 /* Product.swift in Sources */,
+				7F79F779247F7DB200B9FC56 /* ProductJH.swift in Sources */,
 				7F79F762247A652B00B9FC56 /* UIColor+Additions.swift in Sources */,
 				01705493247F9A1600FAE59B /* TodaySH.swift in Sources */,
 				01C3F22D2480A9C2000FE197 /* PopularTitleCellSH.swift in Sources */,

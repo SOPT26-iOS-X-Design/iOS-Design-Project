@@ -13,9 +13,9 @@ class ShoppingBasketJHVC: UIViewController {
 
     //MARK: Normal Property
     var selectedTab: SelectedTapInShoppingCart = .normalPurchase
-    var rocketFreshProductList: [Product] = []
-    var rocketDeliveryProductList: [Product] = []
-    var normalProductList: [Product] = []
+    var rocketFreshProductList: [ProductJH] = []
+    var rocketDeliveryProductList: [ProductJH] = []
+    var normalProductList: [ProductJH] = []
     
     var itemCount: Int = 0
     override func viewDidLoad() {
@@ -28,16 +28,16 @@ class ShoppingBasketJHVC: UIViewController {
     
     //MARK:- Custom Method
     func setDummy(){
-        self.rocketFreshProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketFreshProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketFreshProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketFreshProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketDeliveryProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketDeliveryProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.rocketDeliveryProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.normalProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.normalProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
-        self.normalProductList.append(Product(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketFreshProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketFreshProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketFreshProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketFreshProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketDeliveryProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketDeliveryProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.rocketDeliveryProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.normalProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.normalProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
+        self.normalProductList.append(ProductJH(category: .rocketDelivery, name: "123", imgStr: "123", priceStr: "!23"))
         self.itemCount = self.rocketDeliveryProductList.count + self.rocketFreshProductList.count + self.normalProductList.count
     }
 
