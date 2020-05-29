@@ -13,8 +13,6 @@ class HomeExVC: UIViewController {
     @IBOutlet weak var Banner: UIView!
     private var bannerView:BannerView!
     private func setUpUI() {
-        //self.view.backgroundColor = #colorLiteral(red: 0.1725490196, green: 0.2431372549, blue: 0.3137254902, alpha: 1)
-
         bannerView = BannerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width*(197.0/375.0)))
         self.Banner.addSubview(bannerView)
         print(bannerView.frame)
@@ -74,31 +72,47 @@ class HomeExVC: UIViewController {
         self.CategoryCollectionView.showsHorizontalScrollIndicator = false
         self.Category.layer.shadowColor = UIColor.black.cgColor
         self.CategoryCollectionView.tag = 1
+        let layout = self.CategoryCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = floor(self.view.frame.width / 5)-10
+        let height = width
+        layout.itemSize = CGSize(width: width, height:height)
+        
     }
 /// 인기검색어
+    
+    @IBOutlet weak var RankingViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var RankLabel: UILabel!
+    @IBOutlet weak var RankItemLabel: UILabel!
+    var toggle:Bool = true
+    @IBOutlet weak var buttonImg: UIButton!
+    @IBAction func RankButton(_ sender: Any) {
+        if toggle {
+            buttonImg.setImage(UIImage(named: "iconRealtimeMore"), for: .normal)
+            RankingViewHeight.constant = 300
+            RankLabel.alpha = 0
+            RankItemLabel.alpha = 0
+        }
+        else {
+            buttonImg.setImage(UIImage(named: "iconRealtimeMore2"), for: .normal)
 
+            RankingViewHeight.constant = 0
+            RankLabel.alpha = 1
+            RankItemLabel.alpha = 1
+        }
+        toggle = !toggle
+    }
     
     
     
-///테이블뷰
+    
+    
+    
+///아래 콜렉션뷰
+    
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var ProductCollectionView: UICollectionView!
-    private var ProductInformation:[[Product]] = []
+    
     private func setProductInformation(){
-        let item1 = Product(imagname: "img1", name: "item1", price: "price1")
-        let item2 = Product(imagname: "img2", name: "item2", price: "price2")
-        let item3 = Product(imagname: "img3", name: "item3", price: "price3")
-        let item4 = Product(imagname: "img4", name: "item4", price: "price4")
-        let item5 = Product(imagname: "img5", name: "item5", price: "price5")
-        let item6 = Product(imagname: "img6", name: "item6", price: "price6")
-        let item7 = Product(imagname: "img7", name: "item7", price: "price7")
-        let item8 = Product(imagname: "img8", name: "item8", price: "price8")
-        let item9 = Product(imagname: "img9", name: "item9", price: "price9")
-        
-        let array1:[Product] = [item1,item2,item3,item4,item5,item6,item7,item8,item9]
-        let array2:[Product] = [item1,item2,item3,item4,item5,item6,item7,item8,item9]
-        let array3:[Product] = [item1,item2,item3,item4,item5,item6,item7,item8,item9]
-        ProductInformation=[array1,array2,array3]
-        
         ProductCollectionView.delegate = self
         ProductCollectionView.dataSource = self
         ProductCollectionView.tag = 2
@@ -111,6 +125,7 @@ class HomeExVC: UIViewController {
         setUpBannerView(item: 6)
         setCategoryInformation()
         setProductInformation()
+        collectionViewHeight.constant = ProductCollectionView.frame.height * 3
         // Do any additional setup after loading the view.
 
     }
@@ -136,16 +151,8 @@ extension HomeExVC:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1{return first_page_categoryImageInformation.count}
         else {
-
-            if section == 0 {
-                return ProductInformation[section].count
-            }
-            else if section == 1 {
-                return ProductInformation[section].count
-            }
-            else {
-                return ProductInformation[section].count
-            }
+            return 1
+            
         }
     }
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -165,12 +172,9 @@ extension HomeExVC:UICollectionViewDataSource{
         }
         else {
             switch indexPath.section {
-
             default:
                 let productCell : ProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
-                productCell.ProductImage.image = UIImage(named: ProductInformation[indexPath.section][indexPath.row].ProductImageName)
-                productCell.ProductName.text = ProductInformation[indexPath.section][indexPath.row].ProductName
-                productCell.ProductPrice.text = ProductInformation[indexPath.section][indexPath.row].ProductPrice
+                productCell.sectionNumber = indexPath.section
                 return productCell
             }
 
@@ -205,29 +209,14 @@ extension HomeExVC:UICollectionViewDataSource{
 }
 extension HomeExVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if collectionView.tag == 1 {
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
-        else {
-            return UIEdgeInsets(top: 6.5, left: 11, bottom: 0, right: 11)
-        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView.tag == 1 {
         return 10
         }
-        else { return 16 }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView.tag == 1 {
-        let width = floor(self.view.frame.width / 5)-10
-        let height = width
-        return CGSize(width: width, height:height)
-        }
-        else { return CGSize(width : 95,height:121)
-        }
+        else { return 0 }
     }
 }
 /*extension HomeExVC:UIScrollViewDelegate{
