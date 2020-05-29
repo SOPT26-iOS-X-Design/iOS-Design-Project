@@ -87,20 +87,38 @@ class HomeExVC: UIViewController {
     @IBOutlet weak var buttonImg: UIButton!
     @IBAction func RankButton(_ sender: Any) {
         if toggle {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.RankingViewHeight.constant = 160
+            })
             buttonImg.setImage(UIImage(named: "iconRealtimeMore"), for: .normal)
-            RankingViewHeight.constant = 300
             RankLabel.alpha = 0
             RankItemLabel.alpha = 0
         }
         else {
             buttonImg.setImage(UIImage(named: "iconRealtimeMore2"), for: .normal)
 
-            RankingViewHeight.constant = 0
+            UIView.animate(withDuration: 0.5, animations: {
+                self.RankingViewHeight.constant = 0
+            })
             RankLabel.alpha = 1
             RankItemLabel.alpha = 1
+            
         }
         toggle = !toggle
     }
+    
+    
+    @IBOutlet weak var RankingCollectionView: UICollectionView!
+    
+    private func setRankInfo(){
+        RankingCollectionView.delegate = self
+        RankingCollectionView.dataSource = self
+        RankingCollectionView.tag = 3
+        let layout = RankingCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width = floor(self.RankingCollectionView.frame.width / 2)
+        //layout.itemSize = CGSize(width: width, height: 16)
+    }
+    
     
     
     
@@ -118,13 +136,18 @@ class HomeExVC: UIViewController {
         ProductCollectionView.tag = 2
     }
     private var headerLabel:[String] = ["@@@님의 추천상품","로켓프레시","오늘의 특가"]
+
     
+    
+    
+/// 뷰디드로드
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
         setUpBannerView(item: 6)
         setCategoryInformation()
         setProductInformation()
+        setRankInfo()
         collectionViewHeight.constant = ProductCollectionView.frame.height * 3
         // Do any additional setup after loading the view.
 
@@ -150,10 +173,10 @@ extension HomeExVC:UICollectionViewDelegate{
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1{return first_page_categoryImageInformation.count}
-        else {
-            return 1
-            
+        else if collectionView.tag == 3 {
+            return 10
         }
+        else { return 1}
     }
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / 300)
@@ -170,14 +193,26 @@ extension HomeExVC:UICollectionViewDataSource{
 
         return cell
         }
-        else {
+        else if collectionView.tag == 2{
             switch indexPath.section {
             default:
                 let productCell : ProductCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
                 productCell.sectionNumber = indexPath.section
                 return productCell
             }
+        }
+        else {
+            let cell:RankingCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: RankingCollectionViewCell.identifier, for: indexPath) as! RankingCollectionViewCell
+            cell.RankLabel.text = String(indexPath.row + 1)
+            cell.itemLabel.text = String(indexPath.row + 1) + "번째 아이템"
+            if indexPath.row > 2{
+                cell.RankLabel.textColor = UIColor.black
+            }
+            else {
+                cell.RankLabel.textColor = UIColor(red: 78.0 / 255.0, green: 167.0 / 255.0, blue: 224.0 / 255.0, alpha: 1.0)
 
+            }
+            return cell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

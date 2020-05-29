@@ -32,6 +32,7 @@
 		DAE14FFF247AB854000DF0B6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE14FFE247AB854000DF0B6 /* Product.swift */; };
 		DAF6DC84247FD622003AEEF0 /* ProductCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6DC83247FD622003AEEF0 /* ProductCollectionViewHeader.swift */; };
 		DAF6DC8624812F42003AEEF0 /* InnerProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6DC8524812F42003AEEF0 /* InnerProductCollectionViewCell.swift */; };
+		DAF6DC8824814C25003AEEF0 /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF6DC8724814C25003AEEF0 /* RankingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		DAE14FFE247AB854000DF0B6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = "iOS-Design-Project/Source/ViewControllers/Product.swift"; sourceTree = SOURCE_ROOT; };
 		DAF6DC83247FD622003AEEF0 /* ProductCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProductCollectionViewHeader.swift; path = "iOS-Design-Project/Source/Views/ProductCollectionViewHeader.swift"; sourceTree = SOURCE_ROOT; };
 		DAF6DC8524812F42003AEEF0 /* InnerProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InnerProductCollectionViewCell.swift; path = "iOS-Design-Project/Source/Views/InnerProductCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		DAF6DC8724814C25003AEEF0 /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RankingCollectionViewCell.swift; path = "iOS-Design-Project/Source/Views/RankingCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				DADE508A247FBB4200E45A36 /* ProductCollectionViewCell.swift */,
 				DAF6DC8524812F42003AEEF0 /* InnerProductCollectionViewCell.swift */,
 				DAF6DC83247FD622003AEEF0 /* ProductCollectionViewHeader.swift */,
+				DAF6DC8724814C25003AEEF0 /* RankingCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				7F79F758247A5B3700B9FC56 /* CategoryVC.swift in Sources */,
 				7F79F732247A53FB00B9FC56 /* ViewController.swift in Sources */,
 				7F79F756247A5B2800B9FC56 /* HomeExVC.swift in Sources */,
+				DAF6DC8824814C25003AEEF0 /* RankingCollectionViewCell.swift in Sources */,
 				DADE508B247FBB4200E45A36 /* ProductCollectionViewCell.swift in Sources */,
 				7F79F74A247A550900B9FC56 /* TabBarController.swift in Sources */,
 				7F79F72E247A53FB00B9FC56 /* AppDelegate.swift in Sources */,
