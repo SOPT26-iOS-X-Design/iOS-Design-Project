@@ -43,9 +43,9 @@ class TabBarController: UITabBarController {
         secondTab.tabBarItem.selectedImage = UIImage(named: "iconSearch")?.withRenderingMode(.alwaysTemplate)
         
         // Home Tab
-        let homeStoryboard = UIStoryboard.init(name: "HomeExample", bundle: nil)
-        guard let thirdTab = homeStoryboard.instantiateViewController(identifier: "HomeExVC")
-            as? HomeExVC  else {
+        let homeStoryboard = UIStoryboard.init(name: "HomeSH", bundle: nil)
+        guard let thirdTab = homeStoryboard.instantiateViewController(identifier: "HomeSHVC")
+            as? HomeSHVC  else {
             return
         }
 

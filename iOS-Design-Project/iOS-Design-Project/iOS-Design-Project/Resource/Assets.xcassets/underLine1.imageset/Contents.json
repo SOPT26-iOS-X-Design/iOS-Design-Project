@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "underLine1.png",
       "scale" : "1x",
-      "filename" : "iconRealtimeMore.png"
+      "idiom" : "universal"
     },
     {
       "scale" : "2x",
-      "filename" : "iconRealtimeMore@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "underLine1@2x.png"
     },
     {
       "scale" : "3x",
       "idiom" : "universal",
-      "filename" : "iconRealtimeMore@3x.png"
+      "filename" : "underLine1@3x.png"
     }
   ],
   "info" : {

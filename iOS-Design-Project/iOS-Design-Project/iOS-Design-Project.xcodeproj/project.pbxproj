@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010A5CAA247FEC180081CD0B /* RocketCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A5CA9247FEC180081CD0B /* RocketCellSH.swift */; };
+		010A5CAC247FEC300081CD0B /* RocketSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A5CAB247FEC300081CD0B /* RocketSH.swift */; };
+		010A5CAE24801C490081CD0B /* PopularCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A5CAD24801C490081CD0B /* PopularCellSH.swift */; };
+		010A5CB024801EA50081CD0B /* PopularSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010A5CAF24801EA50081CD0B /* PopularSH.swift */; };
+		011A54F2247A7FEB00DAC2D3 /* HomeSH.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 011A54F1247A7FEB00DAC2D3 /* HomeSH.storyboard */; };
+		011A54F4247A802A00DAC2D3 /* HomeSHVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A54F3247A802A00DAC2D3 /* HomeSHVC.swift */; };
+		011A54F6247A9ECB00DAC2D3 /* AdCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A54F5247A9ECB00DAC2D3 /* AdCellSH.swift */; };
+		011A54F8247AA00F00DAC2D3 /* AdsSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011A54F7247AA00F00DAC2D3 /* AdsSH.swift */; };
+		01705491247F99F200FAE59B /* TodayCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01705490247F99F200FAE59B /* TodayCellSH.swift */; };
+		01705493247F9A1600FAE59B /* TodaySH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01705492247F9A1600FAE59B /* TodaySH.swift */; };
+		019FBC58247E329800A3FB2B /* CatCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FBC57247E329800A3FB2B /* CatCellSH.swift */; };
+		019FBC5A247E339F00A3FB2B /* CatSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FBC59247E339F00A3FB2B /* CatSH.swift */; };
+		019FBC5C247EC63200A3FB2B /* RecSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FBC5B247EC63200A3FB2B /* RecSH.swift */; };
+		019FBC5E247EC8BA00A3FB2B /* RecCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019FBC5D247EC8BA00A3FB2B /* RecCellSH.swift */; };
+		01C3F22D2480A9C2000FE197 /* PopularTitleCellSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C3F22C2480A9C2000FE197 /* PopularTitleCellSH.swift */; };
 		7F79F72E247A53FB00B9FC56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F72D247A53FB00B9FC56 /* AppDelegate.swift */; };
 		7F79F730247A53FB00B9FC56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F72F247A53FB00B9FC56 /* SceneDelegate.swift */; };
 		7F79F732247A53FB00B9FC56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F79F731247A53FB00B9FC56 /* ViewController.swift */; };
@@ -29,6 +44,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010A5CA9247FEC180081CD0B /* RocketCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCellSH.swift; sourceTree = "<group>"; };
+		010A5CAB247FEC300081CD0B /* RocketSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketSH.swift; sourceTree = "<group>"; };
+		010A5CAD24801C490081CD0B /* PopularCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCellSH.swift; sourceTree = "<group>"; };
+		010A5CAF24801EA50081CD0B /* PopularSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSH.swift; sourceTree = "<group>"; };
+		011A54F1247A7FEB00DAC2D3 /* HomeSH.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeSH.storyboard; sourceTree = "<group>"; };
+		011A54F3247A802A00DAC2D3 /* HomeSHVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSHVC.swift; sourceTree = "<group>"; };
+		011A54F5247A9ECB00DAC2D3 /* AdCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdCellSH.swift; path = "iOS-Design-Project/Source/ViewControllers/AdCellSH.swift"; sourceTree = SOURCE_ROOT; };
+		011A54F7247AA00F00DAC2D3 /* AdsSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdsSH.swift; path = "iOS-Design-Project/Source/ViewControllers/AdsSH.swift"; sourceTree = SOURCE_ROOT; };
+		01705490247F99F200FAE59B /* TodayCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayCellSH.swift; path = "iOS-Design-Project/Source/ViewControllers/TodayCellSH.swift"; sourceTree = SOURCE_ROOT; };
+		01705492247F9A1600FAE59B /* TodaySH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodaySH.swift; path = "iOS-Design-Project/Source/ViewControllers/TodaySH.swift"; sourceTree = SOURCE_ROOT; };
+		019FBC57247E329800A3FB2B /* CatCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatCellSH.swift; path = "iOS-Design-Project/Source/ViewControllers/CatCellSH.swift"; sourceTree = SOURCE_ROOT; };
+		019FBC59247E339F00A3FB2B /* CatSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CatSH.swift; path = "iOS-Design-Project/Source/ViewControllers/CatSH.swift"; sourceTree = SOURCE_ROOT; };
+		019FBC5B247EC63200A3FB2B /* RecSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecSH.swift; path = "iOS-Design-Project/Source/ViewControllers/RecSH.swift"; sourceTree = SOURCE_ROOT; };
+		019FBC5D247EC8BA00A3FB2B /* RecCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecCellSH.swift; path = "iOS-Design-Project/Source/ViewControllers/RecCellSH.swift"; sourceTree = SOURCE_ROOT; };
+		01C3F22C2480A9C2000FE197 /* PopularTitleCellSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTitleCellSH.swift; sourceTree = "<group>"; };
 		7F79F72A247A53FB00B9FC56 /* iOS-Design-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Design-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F79F72D247A53FB00B9FC56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F79F72F247A53FB00B9FC56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +115,11 @@
 				7F79F745247A543B00B9FC56 /* Resource */,
 				7F79F741247A540600B9FC56 /* Source */,
 				7F79F73B247A53FC00B9FC56 /* Info.plist */,
+				010A5CA9247FEC180081CD0B /* RocketCellSH.swift */,
+				010A5CAB247FEC300081CD0B /* RocketSH.swift */,
+				010A5CAD24801C490081CD0B /* PopularCellSH.swift */,
+				010A5CAF24801EA50081CD0B /* PopularSH.swift */,
+				01C3F22C2480A9C2000FE197 /* PopularTitleCellSH.swift */,
 			);
 			path = "iOS-Design-Project";
 			sourceTree = "<group>";
@@ -113,6 +148,7 @@
 				7F79F759247A5B4600B9FC56 /* SearchVC.swift */,
 				7F79F75B247A5B6500B9FC56 /* PersonalInfoVC.swift */,
 				7F79F75D247A5B7600B9FC56 /* ShoppingBasketExVC.swift */,
+				011A54F3247A802A00DAC2D3 /* HomeSHVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -127,6 +163,14 @@
 		7F79F744247A541F00B9FC56 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				011A54F5247A9ECB00DAC2D3 /* AdCellSH.swift */,
+				011A54F7247AA00F00DAC2D3 /* AdsSH.swift */,
+				019FBC57247E329800A3FB2B /* CatCellSH.swift */,
+				019FBC59247E339F00A3FB2B /* CatSH.swift */,
+				019FBC5B247EC63200A3FB2B /* RecSH.swift */,
+				019FBC5D247EC8BA00A3FB2B /* RecCellSH.swift */,
+				01705490247F99F200FAE59B /* TodayCellSH.swift */,
+				01705492247F9A1600FAE59B /* TodaySH.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -151,6 +195,7 @@
 				7F79F751247A5AA200B9FC56 /* HomeExample.storyboard */,
 				7F79F753247A5AE800B9FC56 /* ShoppingBasketExample.storyboard */,
 				7F79F75F247A620000B9FC56 /* MainTab.storyboard */,
+				011A54F1247A7FEB00DAC2D3 /* HomeSH.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -234,6 +279,7 @@
 				7F79F750247A5A3400B9FC56 /* PersonalInfo.storyboard in Resources */,
 				7F79F737247A53FC00B9FC56 /* Assets.xcassets in Resources */,
 				7F79F752247A5AA200B9FC56 /* HomeExample.storyboard in Resources */,
+				011A54F2247A7FEB00DAC2D3 /* HomeSH.storyboard in Resources */,
 				7F79F735247A53FB00B9FC56 /* Main.storyboard in Resources */,
 				7F79F760247A620000B9FC56 /* MainTab.storyboard in Resources */,
 				7F79F74E247A5A2400B9FC56 /* Search.storyboard in Resources */,
@@ -247,16 +293,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				011A54F8247AA00F00DAC2D3 /* AdsSH.swift in Sources */,
+				011A54F6247A9ECB00DAC2D3 /* AdCellSH.swift in Sources */,
 				7F79F75E247A5B7600B9FC56 /* ShoppingBasketExVC.swift in Sources */,
+				010A5CB024801EA50081CD0B /* PopularSH.swift in Sources */,
 				7F79F762247A652B00B9FC56 /* UIColor+Additions.swift in Sources */,
+				01705493247F9A1600FAE59B /* TodaySH.swift in Sources */,
+				01C3F22D2480A9C2000FE197 /* PopularTitleCellSH.swift in Sources */,
+				019FBC5E247EC8BA00A3FB2B /* RecCellSH.swift in Sources */,
 				7F79F75C247A5B6500B9FC56 /* PersonalInfoVC.swift in Sources */,
+				011A54F4247A802A00DAC2D3 /* HomeSHVC.swift in Sources */,
+				010A5CAA247FEC180081CD0B /* RocketCellSH.swift in Sources */,
 				7F79F758247A5B3700B9FC56 /* CategoryVC.swift in Sources */,
 				7F79F732247A53FB00B9FC56 /* ViewController.swift in Sources */,
 				7F79F756247A5B2800B9FC56 /* HomeExVC.swift in Sources */,
+				010A5CAE24801C490081CD0B /* PopularCellSH.swift in Sources */,
 				7F79F74A247A550900B9FC56 /* TabBarController.swift in Sources */,
+				019FBC5A247E339F00A3FB2B /* CatSH.swift in Sources */,
+				019FBC5C247EC63200A3FB2B /* RecSH.swift in Sources */,
 				7F79F72E247A53FB00B9FC56 /* AppDelegate.swift in Sources */,
+				01705491247F99F200FAE59B /* TodayCellSH.swift in Sources */,
 				7F79F730247A53FB00B9FC56 /* SceneDelegate.swift in Sources */,
 				7F79F75A247A5B4600B9FC56 /* SearchVC.swift in Sources */,
+				019FBC58247E329800A3FB2B /* CatCellSH.swift in Sources */,
+				010A5CAC247FEC300081CD0B /* RocketSH.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,8 +461,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAWSBW2KW5;
+				DEVELOPMENT_TEAM = 376MB7FHC5;
 				INFOPLIST_FILE = "iOS-Design-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,8 +480,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAWSBW2KW5;
+				DEVELOPMENT_TEAM = 376MB7FHC5;
 				INFOPLIST_FILE = "iOS-Design-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
