@@ -9,6 +9,8 @@
 import UIKit
 
 class TabBarController: UITabBarController {
+    
+    var currentSelectedIndex:Int = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +19,7 @@ class TabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         self.delegate = self
     }
+
     
     
     func setTabBar(){
@@ -70,14 +73,16 @@ class TabBarController: UITabBarController {
 //            return
 //        }
         let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBaseketJH", bundle: nil)
-        guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketjhVC")
-            as? UIViewController  else {
+        guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketJHVC")
+            as? ShoppingBasketJHVC  else {
             return
         }
-        
+        //let fifthTab = UIViewController()
         fifthTab.tabBarItem.title = ""
         fifthTab.tabBarItem.image = UIImage(named: "iconCart")
         fifthTab.tabBarItem.selectedImage = UIImage(named: "iconCart")?.withRenderingMode(.alwaysTemplate)
+        
+        
         
         
         // Create an Array of Tables with Tabs as Elements.
@@ -104,12 +109,15 @@ extension TabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         if (tabBarController.selectedIndex == 4) {
             let shoppingBasketStoryboard = UIStoryboard.init(name: "ShoppingBaseketJH", bundle: nil)
-            guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketjhVC")
-                as? UIViewController  else {
+            guard let fifthTab = shoppingBasketStoryboard.instantiateViewController(identifier: "ShoppingBasketJHVC")
+                as? ShoppingBasketJHVC  else {
                 return
             }
-            
+            tabBarController.selectedIndex = self.currentSelectedIndex
             self.navigationController?.pushViewController(fifthTab, animated: true)
+        } else {
+            self.currentSelectedIndex = tabBarController.selectedIndex
         }
+
     }
 }
