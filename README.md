@@ -81,3 +81,21 @@ self.setViewControllers(tabs, animated: false)
 self.selectedViewController = thirdTab
 // 처음으로 표시될 탭을 지정할 수도 있다.
 ```
+
+## 우리조 결과물 !!
+
+### 세화님 화면
+
+<img src="./image/sehwa1.png" width="300"/>
+<img src="./image/sehwa2.png" width="300"/>
+
+### 태훈님 화면
+
+<img src="./image/taehoon1.png" width="300"/>
+<img src="./image/taehoon2.png" width="300"/>
+
+### 유진님 화면
+
+<img src="./image/yujin.png" width="300"/>
+
+> 인기검색어 자동 스크롤 !!
